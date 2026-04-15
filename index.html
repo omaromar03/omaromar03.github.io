@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Omar Al Lahham | Software Engineer</title>
+  <meta
+    name="description"
+    content="Omar Al Lahham - Software Engineer and Full-Stack Developer portfolio featuring AI, analytics, ML, and web development projects."
+  />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-soft: #11182d;
+      --panel: rgba(255, 255, 255, 0.06);
+      --panel-strong: rgba(255, 255, 255, 0.09);
+      --text: #edf2ff;
+      --muted: #a6b0cf;
+      --line: rgba(255, 255, 255, 0.12);
+      --accent: #67e8f9;
+      --accent-2: #8b5cf6;
+      --success: #22c55e;
+      --warning: #f59e0b;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      --radius: 22px;
+      --radius-sm: 14px;
+      --max: 1200px;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background:
+        radial-gradient(circle at top left, rgba(103,232,249,0.10), transparent 30%),
+        radial-gradient(circle at top right, rgba(139,92,246,0.14), transparent 30%),
+        linear-gradient(180deg, #070b16 0%, #0b1020 100%);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 88px 0;
+      position: relative;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      margin: 0 0 12px;
+      letter-spacing: -0.03em;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 1.8;
+      margin: 0 0 28px;
+      max-width: 760px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      color: var(--muted);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+    }
+
+    .badge-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--success);
+      box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6);
+      animation: pulse 1.9s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6); }
+      70% { box-shadow: 0 0 0 12px rgba(34, 197, 94, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+    }
+
+    /* Navbar */
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(18px);
+      background: rgba(7, 11, 22, 0.65);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      font-size: 1.1rem;
+    }
+
+    .brand span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.96rem;
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #06111e;
+      font-weight: 800;
+      box-shadow: var(--shadow);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 72px 0 54px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      margin-bottom: 14px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(2.8rem, 7vw, 5.4rem);
+      line-height: 0.95;
+      letter-spacing: -0.055em;
+    }
+
+    .hero h1 .muted {
+      display: block;
+      color: #8fa0d8;
+    }
+
+    .hero p {
+      margin: 20px 0 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.9;
+      max-width: 720px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 18px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      transition: 0.25s ease;
+      font-weight: 700;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #06111e;
+      border: none;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: auto -20% -40% auto;
+      width: 240px;
+      height: 240px;
+      background: radial-gradient(circle, rgba(103,232,249,0.25), transparent 65%);
+      pointer-events: none;
+    }
+
+    .profile-frame {
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: #0c1428;
+    }
+
+    .profile-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 4 / 4.7;
+    }
+
+    .mini-meta {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .mini-meta .item {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      padding: 14px;
+    }
+
+    .mini-meta .label {
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-bottom: 6px;
+    }
+
+    .mini-meta .value {
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    /* Stats */
+    .stats {
+      margin-top: 34px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .stat {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px;
+    }
+
+    .stat h3 {
+      margin: 0 0 8px;
+      font-size: 2rem;
+      letter-spacing: -0.04em;
+    }
+
+    .stat p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* Cards grid */
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+      letter-spacing: -0.03em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.85;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .chip {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      color: #dbe6ff;
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-size: 0.87rem;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .about-block {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px;
+    }
+
+    .about-block h3 {
+      margin: 0 0 12px;
+      font-size: 1.15rem;
+    }
+
+    .about-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .about-list li {
+      display: flex;
+      gap: 12px;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .about-list li strong {
+      color: #fff;
+      min-width: 92px;
+    }
+
+    /* Experience */
+    .timeline {
+      display: grid;
+      gap: 18px;
+    }
+
+    .timeline-item {
+      position: relative;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px 24px 24px 26px;
+      overflow: hidden;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 20px;
+      bottom: 20px;
+      width: 4px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--accent), var(--accent-2));
+    }
+
+    .timeline-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .timeline-role {
+      font-size: 1.18rem;
+      font-weight: 800;
+    }
+
+    .timeline-company {
+      color: var(--accent);
+      font-weight: 700;
+      margin-top: 4px;
+    }
+
+    .timeline-date {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* Projects */
+    .project-phase {
+      margin-top: 34px;
+    }
+
+    .phase-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .phase-title h3 {
+      margin: 0;
+      font-size: 1.35rem;
+      letter-spacing: -0.03em;
+    }
+
+    .phase-title span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .project-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .project-card.featured {
+      background:
+        linear-gradient(180deg, rgba(103,232,249,0.10), rgba(255,255,255,0.04)),
+        rgba(255,255,255,0.04);
+      border-color: rgba(103,232,249,0.18);
+    }
+
+    .project-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+    .project-head h4 {
+      margin: 0;
+      font-size: 1.12rem;
+      line-height: 1.4;
+    }
+
+    .project-tag {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #08131d;
+      background: linear-gradient(135deg, var(--accent), #d8b4fe);
+      padding: 8px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .project-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: auto;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 14px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .project-link:hover {
+      background: rgba(255,255,255,0.08);
+    }
+
+    /* Cert section */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .cert-image {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .cert-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      min-height: 100%;
+    }
+
+    .cert-content {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .cert-content h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 1.35rem;
+    }
+
+    .cert-meta {
+      display: grid;
+      gap: 10px;
+      margin: 18px 0;
+      color: var(--muted);
+    }
+
+    .cert-meta strong {
+      color: #fff;
+    }
+
+    /* Contact */
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 18px;
+    }
+
+    .contact-card,
+    .form-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .contact-item {
+      display: block;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      border-radius: 16px;
+      padding: 16px;
+      color: var(--muted);
+      transition: 0.2s ease;
+    }
+
+    .contact-item strong {
+      display: block;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .contact-item:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.06);
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    label {
+      font-size: 0.92rem;
+      color: var(--muted);
+      display: grid;
+      gap: 8px;
+    }
+
+    input, textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.03);
+      color: #fff;
+      padding: 14px 16px;
+      font: inherit;
+      outline: none;
+    }
+
+    input:focus, textarea:focus {
+      border-color: rgba(103,232,249,0.45);
+      box-shadow: 0 0 0 4px rgba(103,232,249,0.10);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 140px;
+    }
+
+    .form-note {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* Footer */
+    footer {
+      padding: 26px 0 40px;
+      color: var(--muted);
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* Responsive */
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .about-grid,
+      .contact-wrap,
+      .cert-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats,
+      .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .section {
+        padding: 72px 0;
+      }
+
+      .nav {
+        height: auto;
+        padding: 16px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .hero {
+        padding-top: 40px;
+      }
+
+      .stats,
+      .grid-2,
+      .grid-3,
+      .mini-meta {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn,
+      .nav-cta,
+      .project-link {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="nav-wrap">
+    <div class="container nav">
+      <a href="#top" class="brand">Omar<span>.</span>Dev</a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <a class="nav-cta" href="#contact">Let's Connect</a>
+    </div>
+  </div>
+
+  <main id="top">
+    <section class="hero section">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="badge">
+              <span class="badge-dot"></span>
+              Open to opportunities in software engineering and full-stack development
+            </div>
+
+            <div class="eyebrow">Software Engineer • Full-Stack Developer</div>
+
+            <h1>
+              Omar Al Lahham
+              <span class="muted">Building useful products with code, structure, and depth.</span>
+            </h1>
+
+            <p>
+              I am a Software Engineer based in Amman, Jordan, with a strong interest in continuous
+              learning, deep thinking, and practical problem solving. I completed my bachelor’s degree,
+              trained at Orange for four months, and delivered my graduation project in collaboration
+              with the company. My work spans full-stack web development, analytics, and applied AI projects.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#projects">View My Work</a>
+              <a class="btn btn-secondary" href="https://github.com/omaromar03" target="_blank" rel="noreferrer">GitHub Profile</a>
+              <a class="btn btn-secondary" href="https://www.linkedin.com/in/omar-allaham-a1350733a?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noreferrer">LinkedIn</a>
+            </div>
+
+            <div class="stats">
+              <div class="stat">
+                <h3>10+</h3>
+                <p>portfolio-ready projects across analytics, ML, and software engineering.</p>
+              </div>
+              <div class="stat">
+                <h3>4 Mo</h3>
+                <p>training and internship experience at Orange Digital Center.</p>
+              </div>
+              <div class="stat">
+                <h3>1</h3>
+                <p>real e-commerce project built and sold as a freelance product.</p>
+              </div>
+              <div class="stat">
+                <h3>AI + Web</h3>
+                <p>hands-on work across full-stack development and applied AI learning.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-card">
+            <div class="profile-frame">
+              <img src="profile.jpg" alt="Omar Al Lahham" />
+            </div>
+
+            <div class="mini-meta">
+              <div class="item">
+                <div class="label">Location</div>
+                <div class="value">Amman, Jordan</div>
+              </div>
+              <div class="item">
+                <div class="label">Email</div>
+                <div class="value">oallaham9@gmail.com</div>
+              </div>
+              <div class="item">
+                <div class="label">Phone</div>
+                <div class="value">0785414860</div>
+              </div>
+              <div class="item">
+                <div class="label">Language</div>
+                <div class="value">English / Arabic</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="badge">About Me</div>
+        <h2 class="section-title">A developer focused on building real, usable work.</h2>
+        <p class="section-subtitle">
+          My portfolio is built around real coursework, practical software engineering, and projects
+          that demonstrate execution, not only theory. I care about clean implementation, clarity,
+          and building systems that solve actual user needs.
+        </p>
+
+        <div class="about-grid">
+          <div class="about-block">
+            <h3>Profile Summary</h3>
+            <p style="color: var(--muted); line-height: 1.9; margin: 0;">
+              I enjoy learning deeply and understanding how things work, not just finishing tasks.
+              My background combines structured academic work, team-based technical training, and
+              independent building. I aim to grow into stronger full-stack engineering roles while
+              continuing to expand into data, AI, and intelligent product development.
+            </p>
+          </div>
+
+          <div class="about-block">
+            <h3>Quick Facts</h3>
+            <ul class="about-list">
+              <li><strong>Name</strong> Omar Al Lahham</li>
+              <li><strong>Role</strong> Software Engineer | Full-Stack Developer</li>
+              <li><strong>Base</strong> Amman, Jordan</li>
+              <li><strong>Focus</strong> Web Development, Analytics, Applied AI</li>
+              <li><strong>Strengths</strong> Learning mindset, structured thinking, practical execution</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="badge">Skills</div>
+        <h2 class="section-title">Core technologies and areas I work with.</h2>
+        <p class="section-subtitle">
+          My work combines backend development, frontend foundations, databases, analytics,
+          and machine learning coursework with real implementation practice.
+        </p>
+
+        <div class="grid grid-3">
+          <div class="card">
+            <h3>Full-Stack Development</h3>
+            <p>ASP.NET MVC Core, C#, Entity Framework, Identity Authentication, SQL Server, HTML, CSS, JavaScript, Bootstrap.</p>
+            <div class="chips">
+              <span class="chip">ASP.NET MVC Core</span>
+              <span class="chip">C#</span>
+              <span class="chip">SQL Server</span>
+              <span class="chip">Bootstrap</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Data & Analytics</h3>
+            <p>Python, pandas, SQL, PostgreSQL, exploratory analysis, KPI design, business reporting, ETL thinking.</p>
+            <div class="chips">
+              <span class="chip">Python</span>
+              <span class="chip">pandas</span>
+              <span class="chip">PostgreSQL</span>
+              <span class="chip">ETL</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Machine Learning</h3>
+            <p>scikit-learn, PyTorch, regression evaluation, classification metrics, cross-validation, model experimentation.</p>
+            <div class="chips">
+              <span class="chip">scikit-learn</span>
+              <span class="chip">PyTorch</span>
+              <span class="chip">Regression</span>
+              <span class="chip">Classification</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="badge">Experience</div>
+        <h2 class="section-title">Training, delivery, and real product work.</h2>
+        <p class="section-subtitle">
+          My experience already combines formal training, project delivery, and independent client-facing work.
+        </p>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-top">
+              <div>
+                <div class="timeline-role">Software Engineering Trainee</div>
+                <div class="timeline-company">Orange Digital Center / Coding School</div>
+              </div>
+              <div class="timeline-date">March 2025 — June 2025</div>
+            </div>
+            <p>
+              Completed a structured internship and training period that combined technical practice and
+              soft skills development. I also completed my graduation project in collaboration with Orange,
+              which gave me hands-on experience in turning an idea into a working software solution.
+            </p>
+            <div class="chips">
+              <span class="chip">Training</span>
+              <span class="chip">Soft Skills</span>
+              <span class="chip">Project Delivery</span>
+              <span class="chip">Team Collaboration</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-top">
+              <div>
+                <div class="timeline-role">Freelance Web Developer</div>
+                <div class="timeline-company">WM Store</div>
+              </div>
+              <div class="timeline-date">Client Project</div>
+            </div>
+            <p>
+              Built and delivered a real e-commerce website that was later sold. The project focused on
+              clean structure, responsive UI, catalog management, shopping flow, and practical admin-side control.
+            </p>
+            <div class="chips">
+              <span class="chip">Client Work</span>
+              <span class="chip">E-Commerce</span>
+              <span class="chip">ASP.NET MVC</span>
+              <span class="chip">Production Mindset</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-top">
+              <div>
+                <div class="timeline-role">Graduation Project Developer</div>
+                <div class="timeline-company">Smart Tourism Guide</div>
+              </div>
+              <div class="timeline-date">Academic Capstone</div>
+            </div>
+            <p>
+              Developed a smart tourism guide project using ASP.NET MVC Core with HTML, CSS, JavaScript,
+              C#, Identity Authentication, Bootstrap, and SQL. The project aimed to provide a more useful
+              and structured digital tourism experience.
+            </p>
+            <div class="chips">
+              <span class="chip">Graduation Project</span>
+              <span class="chip">Identity Authentication</span>
+              <span class="chip">ASP.NET MVC Core</span>
+              <span class="chip">SQL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="badge">Projects</div>
+        <h2 class="section-title">Selected work across engineering, analytics, and machine learning.</h2>
+        <p class="section-subtitle">
+          I grouped my work into portfolio phases so recruiters and hiring managers can scan both
+          breadth and progression quickly.
+        </p>
+
+        <div class="project-phase">
+          <div class="phase-title">
+            <h3>Foundations</h3>
+            <span>Environment setup, Git workflows, coding workflow fundamentals</span>
+          </div>
+
+          <div class="grid grid-3">
+            <article class="project-card">
+              <div class="project-head">
+                <h4>Git Workflows</h4>
+                <span class="project-tag">Foundation</span>
+              </div>
+              <p>
+                Practiced structured Git collaboration, branching, and submission workflows as part of the AI.SPIRE program.
+              </p>
+              <div class="chips">
+                <span class="chip">Git</span>
+                <span class="chip">GitHub</span>
+                <span class="chip">Version Control</span>
+              </div>
+              <div class="project-actions">
+                <a class="project-link" target="_blank" rel="noreferrer" href="https://github.com/LevelUp-Applied-AI/m1-l1-git-workflows-omaromar03">GitHub Repo</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-head">
+                <h4>Python Environment Setup</h4>
+                <span class="project-tag">Foundation</span>
+              </div>
+              <p>
+                Set up reproducible Python development environments and learned the workflow needed to build and run technical assignments reliably.
+              </p>
+              <div class="chips">
+                <span class="chip">Python</span>
+                <span class="chip">venv</span>
+                <span class="chip">Setup</span>
+              </div>
+              <div class="project-actions">
+                <a class="project-link" target="_blank" rel="noreferrer" href="https://github.com/LevelUp-Applied-AI/python-env-omaromar03">GitHub Repo</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-head">
+                <h4>Engineering Foundations</h4>
+                <span class="project-tag">Foundation</span>
+              </div>
+              <p>
+                Worked through engineering-oriented exercises and technical setup tasks that built a stronger base for later analytics and ML modules.
+              </p>
+              <div class="chips">
+                <span class="chip">Engineering</span>
+                <span class="chip">Workflow</span>
+                <span class="chip">Practice</span>
+              </div>
+              <div class="project-actions">
+                <a class="project-link" target="_blank" rel="noreferrer" href="https://github.com/LevelUp-Applied-AI/engineering-omaromar03">GitHub Repo</a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="project-phase">
+          <div class="phase-title">
+            <h3>Data, Analytics & Machine Learning</h3>
+            <span>ETL, EDA, KPI design, evaluation, and modeling</span>
+          </div>
+
+          <div class="grid grid-2">
+            <article class="project-card featured">
+              <div class="project-head">
+                <h4>ETL Pipeline — Amman Digital Market</h4>
+                <span class="project-tag">Integration</span>
+              </div>
+              <p>
+                Built an ETL pipeline project around an Amman Digital Market dataset using Python, SQL files, schema setup, and data loading flow. The repository includes an ETL script, schema, seed data, and tests. :contentReference[oaicite:1]{index=1}
+              </p>
+              <div class="chips">
+                <span class="chip">Python</span>
+                <span class="chip">PostgreSQL</span>
+                <span class="chip">ETL</span>
+                <span class="chip">Testing</span>
+              </div>
+              <div class="project-actions">
+                <a class="project-link" href="https://github.com/LevelUp-Applied-AI/m3-i3-etl-pipeline-omaromar03" target="_blank" rel="noreferrer">GitHub Repo</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-head">
+                <h4>Student Performance EDA</h4>
+                <span class="project-tag">Lab</span>
+              </div>
+              <p>
+                Conducted descriptive analytics and exploratory data analysis on a student performance dataset, including distributions, correlations, plots, and statistical testing. :contentReference[oaicite:2]{index=2}
+              </p>
+              <div class="chips">
+                <span class="chip">EDA</span>
+                <span class="chip">Statistics</span>
+                <span class="chip">Visualization</span>
+                <span class="chip">Python</span>
+              </div>
+              <div class="project-actions">
+                <a class="project-link" href="https://github.com/LevelUp-Applied-AI/m4-l4-descriptive-analytics-omaromar03" target="_blank" rel="noreferrer">GitHub Repo</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-head">
+                <h4>KPI Dashboard Framework</h4>
+                <span class="project-tag">Integration</span>
+              </div>
+              <p>
+                Designed KPI logic and business reporting around marketplace revenue, revenue trends, and operational performance using analysis code, SQL inputs, and executive summary outputs. :contentReference[oaicite:3]{index=3}
+              </p>
+              <div class="chips">
+                <span class="chip">KPIs</span>
+                <span class="chip">Business Analytics</span>
+                <span class="chip">SQL</span>
+                <span class="chip">Reporting</span>
+              </div>
+              <div class="project-actions">
+                <a class="project-link" href="https://github.com/LevelUp-Applied-AI/m4-i4-kpi-dashboard-omaromar03" target="_blank" rel="noreferrer">GitHub Repo</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-head">
+                <h4>Classification Basics</h4>
+                <span class="project-tag">Drill</span>
+              </div>
+              <p>
+                Implemented classification workflow basics including train/test splitting with stratification, classification metrics, and 5-fold stratified cross-validation. :contentReference[oaicite:4]{index=4}
+              </p>
+              <div class="chips">
+                <span class="chip">scikit-learn</span>
+                <span class="chip">Metrics</span>
+                <span class="chip">Cross-Validation</span>
+                <span class="chip">Classification</span>
+              </div>
+              <div class="project-actions">
+                <a class="project-link" href="https://github.com/LevelUp-Applied-AI/m5-d5a-classification-basics-omaromar03" target="_blank" rel="noreferrer">GitHub Repo</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-head">
+                <h4>Regression & Evaluation</h4>
+                <span class="project-tag">Lab</span>
+              </div>
+              <p>
+                Built and evaluated regression models as part of the Module 5 work, focusing on model comparison, performance measurement, and practical ML evaluation workflow. :contentReference[oaicite:5]{index=5}
+              </p>
+              <div class="chips">
+                <span class="chip">Regression</span>
+                <span class="chip">Evaluation</span>
+                <span class="chip">Machine Learning</span>
+                <span class="chip">Python</span>
+              </div>
+              <div class="project-actions">
+                <a class="project-link" href="https://github.com/LevelUp-Applied-AI/m5-l5a-regression-eval-omaromar03" target="_blank" rel="noreferrer">GitHub Repo</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-head">
+                <h4>PyTorch Housing Model</h4>
+                <span class="project-tag">Integration</span>
+              </div>
+              <p>
+                Developed a PyTorch-based project in the AI.SPIRE track, demonstrating hands-on model building and neural network workflow in Python. :contentReference[oaicite:6]{index=6}
+              </p>
+              <div class="chips">
+                <span class="chip">PyTorch</span>
+                <span class="chip">Deep Learning</span>
+                <span class="chip">Modeling</span>
+                <span class="chip">Python</span>
+              </div>
+              <div class="project-actions">
+                <a class="project-link" href="https://github.com/LevelUp-Applied-AI/m2-i2-pytorch-omaromar03" target="_blank" rel="noreferrer">GitHub Repo</a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="project-phase">
+          <div class="phase-title">
+            <h3>Deployment & Product Development</h3>
+            <span>Real product work and full-stack delivery</span>
+          </div>
+
+          <div class="grid grid-2">
+            <article class="project-card featured">
+              <div class="project-head">
+                <h4>WM Store — E-Commerce Website</h4>
+                <span class="project-tag">Live Project</span>
+              </div>
+              <p>
+                Built a full e-commerce website and delivered it as a real freelance product. The site includes a storefront experience, product browsing, shopping flow, and an overall production-focused structure.
+              </p>
+              <div class="chips">
+                <span class="chip">ASP.NET MVC</span>
+                <span class="chip">C#</span>
+                <span class="chip">SQL Server</span>
+                <span class="chip">E-Commerce</span>
+              </div>
+              <div class="project-actions">
+                <a class="project-link" href="https://www.wmstorejo.com/" target="_blank" rel="noreferrer">Live Site</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-head">
+                <h4>Smart Tourism Guide</h4>
+                <span class="project-tag">Graduation Project</span>
+              </div>
+              <p>
+                Built a smart tourism guide system using ASP.NET MVC Core, HTML, CSS, JavaScript, C#, Bootstrap, SQL, and Identity Authentication as part of the graduation project completed with Orange collaboration.
+              </p>
+              <div class="chips">
+                <span class="chip">ASP.NET MVC Core</span>
+                <span class="chip">Identity</span>
+                <span class="chip">JavaScript</span>
+                <span class="chip">SQL</span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="project-phase">
+          <div class="phase-title">
+            <h3>Retrieval & Knowledge Graphs</h3>
+            <span>Portfolio space prepared for upcoming advanced AI systems</span>
+          </div>
+
+          <div class="grid grid-2">
+            <article class="project-card">
+              <div class="project-head">
+                <h4>RAG Systems — Coming Soon</h4>
+                <span class="project-tag">Planned</span>
+              </div>
+              <p>
+                This section will showcase future retrieval-augmented generation work, indexing pipelines, semantic search, and evaluation-focused AI systems.
+              </p>
+            </article>
+
+            <article class="project-card">
+              <div class="project-head">
+                <h4>Knowledge Graph Projects — Coming Soon</h4>
+                <span class="project-tag">Planned</span>
+              </div>
+              <p>
+                This area is reserved for graph-based reasoning, ontology-oriented projects, and knowledge-connected applications developed in later modules.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="certifications">
+      <div class="container">
+        <div class="badge">Certifications</div>
+        <h2 class="section-title">Training credentials that support the work.</h2>
+        <p class="section-subtitle">
+          This certificate reflects completion of the Orange internship program from March 11, 2025 to June 15, 2025 at Orange Digital Center. :contentReference[oaicite:7]{index=7}
+        </p>
+
+        <div class="cert-grid">
+          <div class="cert-image">
+            <img src="orange-certificate.jpg" alt="Orange Internship Certificate" />
+          </div>
+
+          <div class="cert-content">
+            <h3>Orange Digital Center / Coding School — Internship Certificate</h3>
+            <p style="color: var(--muted); line-height: 1.9; margin: 0;">
+              Completed a formal internship and learning track that supported both technical development
+              and professional growth. This period also strengthened communication, teamwork, and practical
+              project execution skills.
+            </p>
+
+            <div class="cert-meta">
+              <div><strong>Program:</strong> Internship Program</div>
+              <div><strong>Organization:</strong> Orange Digital Center / Coding School</div>
+              <div><strong>Period:</strong> March 11, 2025 — June 15, 2025</div>
+              <div><strong>Focus:</strong> Technical practice, project work, and soft skills development</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="badge">Contact</div>
+        <h2 class="section-title">Let’s connect.</h2>
+        <p class="section-subtitle">
+          Whether it is a job opportunity, freelance work, collaboration, or just a technical conversation,
+          feel free to reach out.
+        </p>
+
+        <div class="contact-wrap">
+          <div class="contact-card">
+            <h3 style="margin-top: 0; font-size: 1.3rem;">Contact Information</h3>
+            <p style="color: var(--muted); line-height: 1.85; margin: 0;">
+              You can contact me directly through email, phone, GitHub, or LinkedIn.
+            </p>
+
+            <div class="contact-list">
+              <a class="contact-item" href="mailto:oallaham9@gmail.com">
+                <strong>Email</strong>
+                oallaham9@gmail.com
+              </a>
+
+              <a class="contact-item" href="tel:0785414860">
+                <strong>Phone</strong>
+                0785414860
+              </a>
+
+              <a class="contact-item" href="https://github.com/omaromar03" target="_blank" rel="noreferrer">
+                <strong>GitHub</strong>
+                github.com/omaromar03
+              </a>
+
+              <a class="contact-item" href="https://www.linkedin.com/in/omar-allaham-a1350733a?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noreferrer">
+                <strong>LinkedIn</strong>
+                omar-allaham
+              </a>
+            </div>
+          </div>
+
+          <div class="form-card">
+            <h3 style="margin-top: 0; font-size: 1.3rem;">Quick Message</h3>
+            <p class="form-note">
+              This form opens your email app and prepares the message directly to me.
+            </p>
+
+            <form id="contactForm">
+              <label>
+                Your Name
+                <input type="text" id="name" placeholder="Enter your name" required />
+              </label>
+
+              <label>
+                Your Email
+                <input type="email" id="email" placeholder="Enter your email" required />
+              </label>
+
+              <label>
+                Subject
+                <input type="text" id="subject" placeholder="Subject" required />
+              </label>
+
+              <label>
+                Message
+                <textarea id="message" placeholder="Write your message" required></textarea>
+              </label>
+
+              <button class="btn btn-primary" type="submit">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div>© 2026 Omar Al Lahham. All rights reserved.</div>
+      <div>Built for GitHub Pages • Developer Style Portfolio</div>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById("contactForm");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const subject = document.getElementById("subject").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      const body =
+`Name: ${name}
+Email: ${email}
+
+Message:
+${message}`;
+
+      const mailtoLink = `mailto:oallaham9@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailtoLink;
+    });
+  </script>
+</body>
+</html>
